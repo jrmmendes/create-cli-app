@@ -17,14 +17,13 @@ Ensure you have the following installed:
 
 - [Bun](https://bun.sh/) (latest version)
 - Node.js (optional, if Bun is not globally installed)
-- npm or yarn (for managing dependencies)
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/create-cli-app.git
+   git clone git@github.com/jrmmendes/create-cli-app.git
    cd create-cli-app
    ```
 
@@ -38,29 +37,28 @@ Ensure you have the following installed:
 
 1. Build the project:
 
-   ```bash
+   ```shell
    bun run build
    ```
 
 2. Run the CLI:
 
-   ```bash
+   ```shell
    bun run start
    ```
 
-3. View available commands:
+3. Run the tests:
 
-   ```bash
-   bun run start --help
+   ```shell
+   bun run test
    ```
 
-### Development
-
-To start the development server with hot reloading:
-
-```bash
-bun run dev
-```
+> [!NOTE]
+> If you want to have coverage reports in HTML format, install lcov globally:
+> ```shell
+> # use apt, homebrew, or your default OS package manager
+> dnf in lcov
+> ```
 
 ### Contributing
 
