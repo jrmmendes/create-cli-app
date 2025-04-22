@@ -16,7 +16,7 @@
     "create-cli-app": "./bin.js"
   },
   "scripts": {
-    "clear": "rimraf dist coverage/html coverage/lcov node_modules",
+    "clear": "rimraf dist coverage/html coverage/lcov",
     "test": "FORCE_COLOR=0 NODE_ENV=test bun test",
     "test:html": "bun run test && bun run g:lcov-html",
     "test:html:open": "bun run test:html && xdg-open ./coverage/html/index.html",
