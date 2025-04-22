@@ -6,7 +6,7 @@ export const parse = ({ argv, pkg }: { argv: string[], pkg: Package }): () => Pr
   const program = new Command();
 
   program
-    .name(pkg.name)
+    .name('create-cli-app')
     .description(pkg.description)
     .version(pkg.version, '-v, --version', 'output the current version')
     .option('-s, --shell', 'start example shell app (powered by ink)')
