@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrmmendes/create-cli-app.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "name": "@jrmmendes/create-cli-app",
+  "type": "module",
+  "author": "jrmmendes <jrmmendes@outlook.com>",
+  "license": "MIT",
+  "description": "Create a prodution ready CLI with Bun, Typescript, Commander and Ink",
+  "bin": {
+    "create-cli-app": "./bin.js"
+  },
+  "scripts": {
+    "clear": "rimraf dist",
+    "test": "FORCE_COLOR=0 NODE_ENV=test bun test",
+    "test:html": "bun run test && bun run g:lcov-html",
+    "test:html:open": "bun run test:html && xdg-open ./coverage/html/index.html",
+    "build": "bun run clear && bun build src/entrypoint.ts --outfile=./dist/bundle.js --target=node --format=esm --minify",
+    "start": "node ./bin.js",
+    "start:dev": "bun ./src/entrypoint.ts",
+    "prepublishOnly": "bun run build",
+    "g:lcov-html": "genhtml coverage/lcov.info -o ./coverage/html -c ./coverage/style.css"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/ink": "^2.0.3",
+    "@types/ink-testing-library": "^1.0.4",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.1",
+    "ink-testing-library": "^4.0.0",
+    "react-devtools-core": "^6.1.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "ink": "^5.2.0",
+    "ink-text-input": "^6.0.0",
+    "react": "18"
+  },
+  "files": [
+    "dist",
+    "bin.js"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

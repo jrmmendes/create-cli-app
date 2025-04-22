@@ -1,0 +1,5 @@
+[test]
+coverage = true
+coverageReporter = ["text","lcov"]
+root = "./__tests__"
+coverageSkipTestFiles = true
